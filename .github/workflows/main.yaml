@@ -1,0 +1,19 @@
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    name: echo org vars
+    runs-on: self-hosted
+    steps:
+    - name: Use variables
+      run: |
+        echo "repository variable : $REPOSITORY_VAR"
+        echo "organization variable : $ORGANIZATION_VAR"
+        echo "overridden variable : $OVERRIDE_VAR"
+        echo "variable from shell environment : $env_var"
+      env:
+        REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
+        ORGANIZATION_VAR: ${{ vars.ORGANIZATION_VAR }}
+        OVERRIDE_VAR: ${{ vars.OVERRIDE_VAR }}
