@@ -14,4 +14,5 @@ jobs:
         echo "overridden variable : ${{ vars.OVERRIDE_VAR }}"
         echo "variable from shell environment : $env_var"
         echo "image repository : ${{ vars.IMAGE_REPOSITORY }}"
+        echo "github env : ${{ vars.GITHUB_ENV }}"
 
