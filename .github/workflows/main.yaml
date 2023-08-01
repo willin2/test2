@@ -24,3 +24,7 @@ jobs:
             echo $value
             echo "$key=$value" >> $GITHUB_ENV
         done <<< $(jq -c '.variables[]' vars.json)
+
+    - name: cat values-DEV.yaml
+      run: cat values-DEV.yaml
+      

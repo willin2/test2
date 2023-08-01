@@ -1,0 +1,2 @@
+image:
+  repository: ${{ env.IMAGE_REPOSITORY }}
