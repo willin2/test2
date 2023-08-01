@@ -7,6 +7,9 @@ jobs:
     name: echo org vars
     runs-on: self-hosted
     steps:
+    - name: checkout the code
+      uses: actions/checkout@v3
+      
     - name: Use variables
       env:
         MY_TOKEN: ${{ secrets.MY_TOKEN }}
@@ -29,6 +32,6 @@ jobs:
 
     - name: echo GITHUB_ENV
       run: echo $GITHUB_ENV
-      
+
     - name: cat values-DEV.yaml
       run: cat values-DEV.yaml
